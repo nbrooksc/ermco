@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WirePulse Analytics</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../../sbadmin/vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- c3js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.min.css" rel="stylesheet">
+
+
+    <!-- Script for including outside HTML -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      .popover{
+	max-width: 100%;
+      }
+    </style>
+
+</head>
+
+<body onload="updateWire();">
+    <div id="wrapper">
+
+      <div w3-include-html="installerHeader.html"></div> 
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header" id="heads">Real Time Status</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row" id="panel-strip">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <!--    <i class="fa fa-beer fa-5x"></i>
+                             --> <img src="wptrans.png" height="78" width="78">   </div>
+                                <div class="col-xs-9 text-right">
+                                    <div id="boxOneCurrent" class="huge">170 ft</div>
+                                    <div>Cat5 Wire</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" data-toggle="popover" data-html="true" title="Part# CAT5-0529-GRY" data-content="Last Pull by Frank
+			  <br />8/31/17 9:48am<br />Milwaukee, WI">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                  <img src="wptrans.png" height="78" width="78">
+				</div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">165 ft</div>
+                                    <div>18-4 Wire</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" data-toggle="popover" data-html="true" title="Part# 18-4-0115-YLW" data-content="
+			  Last Pull on 8/28/17<br>2 Reels (2000 ft) in inventory">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <img src="wptrans.png" height="78" width="78">
+			        </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">21 ft</div>
+                                    <div>THHN Wire</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" data-toggle="popover" data-html="true" title="Part# THHN-0881-YLW" data-content="
+			  You have zero THHN reels in inventory<br/><a href='#'>Reorder">
+                            <div class="panel-footer">
+                                <span class="pull-left">Inventory Low</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-bell fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">0</div>
+                                    <div>New Alerts</div>
+                                </div>
+                            </div> 
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+	        <div class="col-lg-12">
+		    <div class="panel panel-default">
+			<div class="panel-heading">
+			  Wire On Hand
+			</div> <!-- End panel-heading -->
+		    	<div class="panel-body">
+			  <div id="installerChart"></div>
+			</div> <!-- /.panel-body -->
+		    </div> <!-- /panel -->
+		</div> <!-- /.col-lg-8 -->
+                <div class="col-lg-12">
+		    <div class="panel panel-default">
+			<div class="panel-heading">
+			    Loss Prevention
+			</div> <!-- /.panel-heading -->
+			<div class="panel-body">
+			    <div class="table-responsive">
+				<table class="table table-bordered table-hover table-striped">
+				    <thead>
+					<tr>
+					    <th>Type</th>
+					    <th>Order #</th>
+					    <th>Date</th>
+					    <th>Initial Length (ft)</th>
+					    <th>Remaining Length (ft)</th>
+					    <th>Known Pulls (ft)</th>
+					    <th>Wire Not Accounted For</th>
+				 	</tr>
+				    </thead>
+				    <tbody>
+					<tr>
+					    <td>CAT-5</td>
+					    <td>00085817</td>
+					    <td>6/17/17</td>
+					    <td>1000</td>
+					    <td>225</td>
+					    <td>715</td>
+					    <td>6%</td>
+				    	</tr>
+					<tr>
+					    <td>18-4</td>
+					    <td>01911754</td>
+					    <td>6/24/17</td>
+					    <td>1000</td>
+					    <td>945</td>
+					    <td>55</td>
+					    <td>0%</td>
+					</tr>
+					<tr>
+					    <td>THHN</td>
+					    <td>00005791</td>
+					    <td>8/11/17</td>
+					    <td>1000</td>
+					    <td>550</td>
+					    <td>335</td>
+					    <td>11.5%</td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div> <!-- end .table-responsive -->
+			</div> <!-- end panel-body -->
+		    </div> <!-- end panel -->
+		</div> <!-- end col-lg-8 -->
+
+
+	    </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
+    
+    <!-- Scripts for c3.js here --> 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>  
+  
+    <script src="business.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Enable Popover -->
+    <script>
+      $(document).ready(function() {
+	$('[data-toggle="popover"]').popover({
+	  container: 'body'
+	});
+      });
+    </script>
+
+</body>
+
+</html>
